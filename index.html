@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower - Mateo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Premium Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <h2 class="script-font gold-text">Mateo</h2>
+        </div>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="home">
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <span class="fade-up subtitle">CELEBRAMOS LA LLEGADA DE</span>
+            <h1 class="fade-up title script-font gold-text">Mateo</h1>
+            
+            <div class="hero-bear-wrapper fade-up float-anim">
+                <div class="glow-ring"></div>
+                <!-- Bear flying in a balloon -->
+                <img src="descarga (1).png" alt="Osito en Globo" class="hero-bear">
+            </div>
+            
+            <div class="scroll-indicator fade-up">
+                <span>Desliza para descubrir</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+        
+        <!-- Decorative Clouds -->
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+    </section>
+
+    <!-- Invitation Message -->
+    <section class="message section-padding" id="details">
+        <div class="container message-container">
+            <div class="decor-image decor-left float-anim-delayed">
+                <img src="descarga (5).png" alt="Osito lindo">
+            </div>
+            <div class="message-text text-center">
+                <h2 class="section-title script-font">Nuestro pequeño milagro</h2>
+                <div class="divider"></div>
+                <p class="section-text">Estamos contando los días para conocer a nuestro pequeño Mateo. Queremos rodearlo de todo el amor y la alegría de nuestra familia y amigos en este día tan especial.</p>
+                <p class="section-text italic mt-3">¡Nos encantaría que nos acompañes!</p>
+            </div>
+            <div class="decor-image decor-right float-anim">
+                <img src="descarga (2).png" alt="Osito">
+            </div>
+        </div>
+    </section>
+
+    <!-- Glassmorphism Countdown Section -->
+    <section class="countdown-section">
+        <div class="countdown-bg"></div>
+        <div class="container">
+            <div class="glass-card text-center">
+                <h3 class="countdown-title script-font">La dulce espera</h3>
+                <p class="countdown-subtitle">Sábado, 28 de Agosto, 2026</p>
+                <div class="countdown" id="countdown">
+                    <div class="time-block">
+                        <span class="number" id="days">00</span>
+                        <span class="label">Días</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="number" id="hours">00</span>
+                        <span class="label">Hrs</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="number" id="minutes">00</span>
+                        <span class="label">Min</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span class="number" id="seconds">00</span>
+                        <span class="label">Seg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details (Cards) -->
+    <section class="location section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title script-font">Detalles del Evento</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="details-grid">
+                <!-- Location Card -->
+                <div class="detail-card location-card">
+                    <div class="card-icon-wrapper custom-icon">
+                        <img src="ubicacion.png" alt="Ubicación" class="icon-img">
+                    </div>
+                    <h3>Recepción</h3>
+                    <p class="strong">Jardín "Cielo Azul"</p>
+                    <p>Av. Las Nubes 456, Ciudad Mágica</p>
+                    <p class="time">4:00 PM - 9:00 PM</p>
+                    <a href="#" class="btn-outline mt-3">Cómo Llegar</a>
+                </div>
+
+                <!-- Dress Code Card with user icon -->
+                <div class="detail-card">
+                    <div class="card-icon-wrapper custom-icon">
+                        <img src="Vestimenta.png" alt="Código de Vestimenta" class="icon-img">
+                    </div>
+                    <h3>Código de Vestir</h3>
+                    <p>Nos encantaría verlos en <span class="strong">colores pastel</span>.</p>
+                    <p>(Azul cielo, blanco, beige o arena)</p>
+                </div>
+
+                <!-- Gift Card with user icon -->
+                <div class="detail-card">
+                    <div class="card-icon-wrapper custom-icon">
+                        <img src="regalos (2).png" alt="Mesa de Regalos" class="icon-img">
+                    </div>
+                    <h3>Mesa de Regalos</h3>
+                    <p>El mejor regalo es tu presencia. Si deseas tener un detalle adicional, tenemos opciones:</p>
+                    <div class="button-group">
+                        <a href="#" class="btn-outline">Ver Lista Amazon</a>
+                        <a href="#" class="btn-outline">Lluvia de Sobres</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section with beautiful footer bear -->
+    <section class="rsvp text-center">
+        <div class="rsvp-content">
+            <h2 class="script-font gold-text" style="font-size: 4rem;">Confirma tu Asistencia</h2>
+            <p>Agradecemos tu confirmación antes del 15 de Agosto.</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="btn-premium mt-3">Confirmar vía WhatsApp</a>
+        </div>
+        
+        <!-- Large footer bear -->
+        <div class="footer-bear-wrapper">
+            <img src="descarga (6).png" alt="Osito despidiéndose" class="footer-bear float-anim">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="script-font">Con amor, Mamá y Papá</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
