@@ -328,7 +328,10 @@ html {
     text-align: center;
     position: relative;
     z-index: 10;
-    padding-top: 10vh;
+    padding: 8vh 20px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .subtitle {
     font-size: 0.9rem;
@@ -466,7 +469,7 @@ html {
 
 .scroll-indicator {
     position: absolute;
-    bottom: -10vh;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -852,23 +855,28 @@ html {
     }
 
     /* --- Hero --- */
+    .hero-content {
+        padding: 5vh 15px 100px;
+    }
     .title {
         font-size: clamp(3.5rem, 18vw, 6rem);
+        margin-bottom: 20px;
     }
     .hero-bear-wrapper {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
     .subtitle {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 3px;
     }
+    /* Hide scroll indicator on mobile — it overlaps the bear */
     .scroll-indicator {
-        bottom: -8vh;
+        display: none;
     }
 
     /* --- Section padding --- */
-    .section-padding { padding: 70px 0; }
+    .section-padding { padding: 60px 0; }
 
     /* --- Message --- */
     .message-container {
@@ -876,41 +884,58 @@ html {
         text-align: center;
         gap: 20px;
     }
-    .section-title { font-size: 2.8rem; }
-    .section-text  { font-size: 1.1rem; }
+    .section-title { font-size: 2.5rem; }
+    .section-text  { font-size: 1.05rem; }
+    .message-decor-row {
+        gap: 12px;
+        margin-top: 20px;
+    }
+    .msg-blocks { width: 70px; }
+    .msg-stars  { width: 55px; }
+
+    /* --- Wave dividers --- */
+    .wave-divider { height: 50px; }
 
     /* --- Countdown --- */
-    .countdown { flex-wrap: wrap; gap: 10px; }
+    .countdown { flex-wrap: wrap; gap: 8px; }
     .separator  { display: none; }
-    .time-block { margin: 5px; min-width: 70px; }
-    .time-block .number { font-size: 2.5rem; }
-    .countdown-title    { font-size: 2.5rem; }
-    .countdown-subtitle { font-size: 1rem; letter-spacing: 1px; }
-    .glass-card { padding: 40px 20px; }
+    .time-block { margin: 4px; min-width: 65px; }
+    .time-block .number { font-size: 2.3rem; }
+    .countdown-title    { font-size: 2.3rem; }
+    .countdown-subtitle { font-size: 0.95rem; letter-spacing: 1px; }
+    .glass-card { padding: 35px 18px; }
 
     /* --- Detail cards --- */
     .details-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
+        padding: 0 5px;
     }
-    .detail-card { padding: 35px 20px; }
-    .custom-icon { width: 120px; height: 120px; }
-    .detail-card h3 { font-size: 1.6rem; }
+    .detail-card { padding: 30px 20px; }
+    .custom-icon { width: 110px; height: 110px; }
+    .detail-card h3 { font-size: 1.5rem; }
 
     /* --- RSVP --- */
-    .rsvp-content h2 { font-size: 2.8rem !important; }
-    .footer-bear-wrapper { width: 200px; }
-    .btn-premium { padding: 12px 28px; font-size: 0.85rem; }
+    .rsvp-content h2 { font-size: 2.5rem !important; }
+    .rsvp-content p  { font-size: 0.95rem; padding: 0 15px; }
+    .footer-bear-wrapper { width: 180px; }
+    .btn-premium {
+        padding: 14px 30px;
+        font-size: 0.85rem;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+    }
 
     /* --- Footer --- */
-    .footer p { font-size: 1.5rem; }
+    .footer p { font-size: 1.4rem; }
 
     /* --- Music toggle --- */
     .music-toggle {
         bottom: 18px;
         right: 18px;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
     }
 }
 
