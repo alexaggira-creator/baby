@@ -810,9 +810,23 @@ html {
         flex-direction: column;
         text-align: center;
     }
+    /* On tablet, bears become a centered row below text */
     .decor-image {
-        display: none; /* hide side bears on tablet+ to avoid overflow */
+        position: relative;
+        width: 160px;
+        transform: none !important;
     }
+    .message-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .message-text {
+        order: 1;
+        width: 100%;
+    }
+    .decor-left  { order: 2; }
+    .decor-right { order: 3; }
     .details-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -882,7 +896,17 @@ html {
     .message-container {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 15px;
+    }
+    /* Bears shown smaller and side by side below text on mobile */
+    .decor-image {
+        position: relative;
+        width: 110px;
+        transform: none !important;
+        filter: drop-shadow(0 8px 16px rgba(155, 174, 200, 0.3));
+    }
+    .decor-left, .decor-right {
+        display: inline-block;
     }
     .section-title { font-size: 2.5rem; }
     .section-text  { font-size: 1.05rem; }
