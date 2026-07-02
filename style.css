@@ -64,6 +64,53 @@ html {
     padding: 120px 0;
 }
 
+/* ── Scroll Progress Bar ── */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--gold-gradient);
+    z-index: 10000;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(212,175,55,0.6);
+}
+
+/* ── Confetti Canvas ── */
+.confetti-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9997;
+}
+
+/* ── Message section decorative row ── */
+.message-decor-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.msg-stars {
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(155,174,200,0.3));
+}
+.msg-blocks {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 6px 12px rgba(155,174,200,0.35));
+}
+
+/* ── Music toggle improved ── */
+.music-toggle .icon-pause { display: none; }
+.music-toggle.playing .icon-play  { display: none; }
+.music-toggle.playing .icon-pause { display: block; }
+
 /* ============================================
    CINEMATIC INTRO SPLASH
    ============================================ */

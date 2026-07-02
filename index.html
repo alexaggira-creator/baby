@@ -14,9 +14,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+    <!-- SEO & OG Meta Tags -->
+    <meta name="description" content="Baby Shower de Mateo — Sábado 28 de Agosto 2026. Confirma tu asistencia.">
+    <meta property="og:title" content="Baby Shower — Mateo">
+    <meta property="og:description" content="¡Nos encantá que nos acompañes! Baby Shower de Mateo, Sábado 28 de Agosto, 4:00 PM.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="descarga (7).png">
+    <meta name="theme-color" content="#F9F7F3">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Confetti Canvas (entry burst) -->
+    <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
 
     <!-- Cinematic Intro Splash -->
     <div id="intro-splash" class="intro-splash">
@@ -96,6 +110,13 @@
                 <div class="divider"></div>
                 <p class="section-text">Estamos contando los días para conocer a nuestro pequeño Mateo. Queremos rodearlo de todo el amor y la alegría de nuestra familia y amigos en este día tan especial.</p>
                 <p class="section-text italic mt-3">¡Nos encantaría que nos acompañes!</p>
+
+                <!-- BOY blocks + stars decorative row -->
+                <div class="message-decor-row">
+                    <img src="descarga (4).png" alt="Estrellas" class="msg-stars float-anim">
+                    <img src="descarga (8).png" alt="BOY blocks" class="msg-blocks float-anim-delayed">
+                    <img src="descarga (4).png" alt="Estrellas" class="msg-stars float-anim" style="transform: scaleX(-1);">
+                </div>
             </div>
             <div class="decor-image decor-right float-anim">
                 <img src="descarga (2).png" alt="Osito">
@@ -203,8 +224,11 @@
     <audio id="bg-music" loop>
         <source src="the_mountain-baby-sleep-143300.mp3" type="audio/mpeg">
     </audio>
-    <button id="music-toggle" class="music-toggle">
-        <svg id="music-icon-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+    <button id="music-toggle" class="music-toggle" title="Música">
+        <!-- Play icon (note) -->
+        <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <!-- Pause icon -->
+        <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
     </button>
 
     <script src="script.js"></script>

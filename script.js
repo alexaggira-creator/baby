@@ -6,6 +6,65 @@ gsap.registerPlugin(ScrollTrigger);
 // Block body scroll while intro is visible
 document.body.style.overflow = 'hidden';
 
+/* ── Scroll Progress Bar ── */
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress  = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    const bar = document.getElementById('scroll-progress');
+    if (bar) bar.style.width = progress + '%';
+});
+
+/* ── Confetti Burst ── */
+function launchConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    if (!canvas) return;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+    const colors = ['#D4AF37','#9BAEC8','#BF953F','#FCF6BA','#f9c8d4','#c5dff8','#ffffff'];
+    const pieces = Array.from({ length: 120 }, () => ({
+        x: Math.random() * canvas.width,
+        y: -20 - Math.random() * 100,
+        w: 8 + Math.random() * 8,
+        h: 5 + Math.random() * 5,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        rot: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.15,
+        vy: 2 + Math.random() * 3,
+        vx: (Math.random() - 0.5) * 2,
+        alpha: 1
+    }));
+    let frame;
+    const startTime = Date.now();
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const elapsed = (Date.now() - startTime) / 1000;
+        let alive = 0;
+        pieces.forEach(p => {
+            p.y += p.vy;
+            p.x += p.vx;
+            p.rot += p.rotSpeed;
+            p.alpha = elapsed < 2 ? 1 : Math.max(0, 1 - (elapsed - 2) / 1.5);
+            if (p.y < canvas.height + 20) alive++;
+            ctx.save();
+            ctx.globalAlpha = p.alpha;
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rot);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+            ctx.restore();
+        });
+        if (elapsed < 4 && alive > 0) {
+            frame = requestAnimationFrame(draw);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            cancelAnimationFrame(frame);
+        }
+    }
+    draw();
+}
+
 /* ── Star canvas particles ── */
 (function initStarCanvas() {
     const canvas = document.getElementById('intro-canvas');
@@ -143,6 +202,9 @@ window.enterInvitation = function() {
             window._musicPlaying = true;
         }).catch(() => {});
     }
+
+    // Confetti burst after curtains open
+    setTimeout(launchConfetti, 1200);
 };
 
 /* ── Main Site Animations (called after intro) ── */
