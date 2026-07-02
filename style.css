@@ -921,13 +921,14 @@ html {
     .wave-divider { height: 50px; }
 
     /* --- Countdown --- */
-    .countdown { flex-wrap: wrap; gap: 8px; }
+    .countdown { flex-wrap: nowrap; gap: 6px; justify-content: center; width: 100%; }
     .separator  { display: none; }
-    .time-block { margin: 4px; min-width: 65px; }
-    .time-block .number { font-size: 2.3rem; }
+    .time-block { margin: 0; min-width: 60px; flex: 1; }
+    .time-block .number { font-size: 2.2rem; }
+    .time-block .label { font-size: 0.7rem; letter-spacing: 1px; }
     .countdown-title    { font-size: 2.3rem; }
     .countdown-subtitle { font-size: 0.95rem; letter-spacing: 1px; }
-    .glass-card { padding: 35px 18px; }
+    .glass-card { padding: 35px 15px; width: 100%; max-width: 100%; }
 
     /* --- Detail cards --- */
     .details-grid {
@@ -978,9 +979,12 @@ html {
 
     .title { font-size: clamp(3rem, 18vw, 5rem); }
 
-    .glass-card { padding: 30px 15px; border-radius: 20px; }
+    .glass-card { padding: 30px 10px; border-radius: 20px; }
 
-    .time-block .number { font-size: 2rem; }
+    .countdown { gap: 4px; }
+    .time-block { min-width: 45px; }
+    .time-block .number { font-size: 1.8rem; }
+    .time-block .label { font-size: 0.6rem; letter-spacing: 0.5px; }
 
     .rsvp-content h2 { font-size: 2.2rem !important; }
 }
